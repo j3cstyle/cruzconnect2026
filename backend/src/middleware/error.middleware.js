@@ -1,0 +1,7 @@
+export function notFound(req, res) {
+  res.status(404).json({success:false, message:`Route not found: ${req.method} ${req.originalUrl}`});
+}
+export function errorHandler(err, _req, res, _next) {
+  console.error(err);
+  res.status(500).json({success:false, message:"Something went wrong while processing your request."});
+}
